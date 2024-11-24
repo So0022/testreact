@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Home",
+    "parent_id": null,
+    "title": "Welcome to our website!",
+    "task": "Task1"
+  },
+  {
+    "id": 2,
+    "name": "About",
+    "parent_id": null,
+    "title": "Learn more about us",
+    "task": "Task2"
+  },
+  {
+    "id": 3,
+    "name": "Team",
+    "parent_id": 2,
+    "title": "Meet our talented team",
+    "task": "Task3"
+  },
+  {
+    "id": 4,
+    "name": "Contact",
+    "parent_id": 2,
+    "title": "Get in touch with us",
+    "task": "Task4"
+  },
+  {
+    "id": 5,
+    "name": "Services",
+    "parent_id": null,
+    "title": "Explore our services",
+    "task": "Task5"
+  },
+  {
+    "id": 6,
+    "name": "Development",
+    "parent_id": 5,
+    "title": "Expert web development services",
+    "task": "Task6"
+  },
+  {
+    "id": 7,
+    "name": "Design",
+    "parent_id": 5,
+    "title": "Professional web design services",
+    "task": "Task7"
+  },
+  {
+    "id": 8,
+    "name": "Consulting",
+    "parent_id": 5,
+    "title": "Comprehensive digital marketing consulting",
+    "task": "Task8"
+  },
+  {
+    "id": 9,
+    "name": "Web Development",
+    "parent_id": 6,
+    "title": "Custom web development solutions",
+    "task": "Task9"
+  },
+  {
+    "id": 10,
+    "name": "Mobile App Development",
+    "parent_id": 9,
+    "title": "Expert mobile app development services",
+    "task": "Task10"
+  },
+  {
+    "id": 11,
+    "name": "E-commerce Development",
+    "parent_id": 6,
+    "title": "Custom e-commerce development solutions",
+    "task": "Task11"
+  },
+  {
+    "id": 12,
+    "name": "UI/UX Design",
+    "parent_id": 7,
+    "title": "User-centered UI/UX design services",
+    "task": "Task12"
+  },
+  {
+    "id": 13,
+    "name": "Branding",
+    "parent_id": 7,
+    "title": "Comprehensive branding services",
+    "task": "Task13"
+  },
+  {
+    "id": 14,
+    "name": "Digital Marketing",
+    "parent_id": 8,
+    "title": "Expert digital marketing services",
+    "task": "Task14"
+  },
+  {
+    "id": 15,
+    "name": "SEO",
+    "parent_id": 8,
+    "title": "Custom SEO solutions",
+    "task": "Task15"
+  },
+  {
+    "id": 16,
+    "name": "Social Media Marketing",
+    "parent_id": 8,
+    "title": "Expert social media marketing services",
+    "task": "Task16"
+  }
+]

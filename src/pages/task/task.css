@@ -1,83 +1,55 @@
-
 .category-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: inherit;
-    overflow: hidden;   
-    color: blue ;
-  }
-  
-  .category-item .title {     
-    width: 100  px;  
-    white-space: nowrap;          
-    text-overflow: ellipsis; 
-    display: inline-block;
-    overflow: hidden;
-    
-  }
-  
-  .dropdown-container {
-    display: inline-block;
-    margin-left: 10px;
-    position: relative; 
-  }
-  
-  .icon {
-    font-size: 20px;
-    cursor: pointer;
-  }
-  .task-menu{
-  
-  }
-  .task-tree{
-    
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: inherit;
+  overflow: hidden;
+  color: blue;
+}
 
+.category-item .title {
+  width: 300 px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  overflow: hidden;
+}
 
+.dropdown-container {
+  display: inline-block;
+  margin-left: 10px;
+  position: relative;
+}
 
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+.task-menu {
+  max-width: 300px;
+}
+.task-tree {
+}
 
+.icon {
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
 
+.icon:hover {
+  color: #1890ff;
+}
 
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
 
+.dropdown .ant-dropdown-menu {
+  display: none;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    .icon {
-    font-size: 24px;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  
-  .icon:hover {
-    color: #1890ff;
-  }
-  
-
-  .dropdown-container {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown .ant-dropdown-menu {
-    display: none;
-  }
-  
-  
-  .dropdown:hover .ant-dropdown-menu {
-    display: block;
-  }
+.dropdown:hover .ant-dropdown-menu {
+  display: block;
+}

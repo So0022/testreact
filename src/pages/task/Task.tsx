@@ -1,5 +1,9 @@
 import React from "react";
+import { useParams } from 'react-router-dom';
 const Task = () => {
-    return(<p>hello</p>);
+    const params = useParams();
+    const id = params.taskid;
+  
+    return <p>Task ID: {id}</p>;
 }
 export default Task;

@@ -3,6 +3,7 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import Bulletin from "../pages/bulletin/Bulletin";
 import TaskTree from "../pages/task";
 import Task from "../pages/task/Task";
+import NewTask from "../pages/task/NewTask";
 
 const ChatWrapper = React.lazy(() => import("../pages/chat-page/index"));
 const Login = React.lazy(() => import("../pages/chat-page/auth/login/login"));
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
           {
             path: ":taskid",
             element: <Task/>,
+          },
+          {
+            path: "newtask/:id",
+            element: <NewTask/>,
           }
         ]
       },

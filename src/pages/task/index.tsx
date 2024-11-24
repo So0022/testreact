@@ -8,6 +8,9 @@ import { first, icons } from 'ckeditor5';
 import { BrowserRouter, Outlet } from 'react-router-dom';
 import Task from './Task';
 import './task.css';
+
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 function TaskTree() {
   // const treeData: TreeDataNode[] = [
   //   {
@@ -70,121 +73,146 @@ function TaskTree() {
   //   },
   // ];
 
-  const data = [
-    {
-      id: 1,
-      name: 'Home',
-      parent_id: null,
-      title: 'Welcome to our website!111111111111111111',
-      task: 'Task1'
-    },
-    {
-      id: 2,
-      name: 'About',
-      parent_id: null,
-      title: 'Learn more about us',
-      task: 'Task2'
-    },
-    {
-      id: 3,
-      name: 'Team',
-      parent_id: 2,
-      title: 'Meet our talented team',
-      task: 'Task3'
-    },
-    {
-      id: 4,
-      name: 'Contact',
-      parent_id: 2,
-      title: 'Get in touch with us',
-      task: 'Task4'
-    },
-    {
-      id: 5,
-      name: 'Services',
-      parent_id: null,
-      title: 'Explore our services',
-      task: 'Task5'
-    },
-    {
-      id: 6,
-      name: 'Development',
-      parent_id: 5,
-      title: 'Expert web development services',
-      task: 'Task6'
-    },
-    {
-      id: 7,
-      name: 'Design',
-      parent_id: 5,
-      title: 'Professional web design services',
-      task: 'Task7'
-    },
-    {
-      id: 8,
-      name: 'Consulting',
-      parent_id: 5,
-      title: 'Comprehensive digital marketing consulting',
-      task: 'Task8'
-    },
-    {
-      id: 9,
-      name: 'Web Development',
-      parent_id: 6,
-      title: 'Custom web development solutions',
-      task: 'Task9'
-    },
-    {
-      id: 10,
-      name: 'Mobile App Development',
-      parent_id: 9,
-      title: 'Expert mobile app development services',
-      task: 'Task10'
-    },
-    {
-      id: 11,
-      name: 'E-commerce Development',
-      parent_id: 6,
-      title: 'Custom e-commerce development solutions',
-      task: 'Task11'
-    },
-    {
-      id: 12,
-      name: 'UI/UX Design',
-      parent_id: 7,
-      title: 'User-centered UI/UX design services',
-      task: 'Task12'
-    },
-    {
-      id: 13,
-      name: 'Branding',
-      parent_id: 7,
-      title: 'Comprehensive branding services',
-      task: 'Task13'
-    },
-    {
-      id: 14,
-      name: 'Digital Marketing',
-      parent_id: 8,
-      title: 'Expert digital marketing services',
-      task: 'Task14'
-    },
-    {
-      id: 15,
-      name: 'SEO',
-      parent_id: 8,
-      title: 'Custom SEO solutions',
-      task: 'Task15'
-    },
-    {
-      id: 16,
-      name: 'Social Media Marketing',
-      parent_id: 8,
-      title: 'Expert social media marketing services',
-      task: 'Task16'
-    }
-  ];
-  const handleNewFileClick = (id) => {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('/data.json')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setData(data);
+      });
+  }, []);
+
+  // const data = [
+  //   {
+  //     id: 1,
+  //     name: 'Home',
+  //     parent_id: null,
+  //     title: 'Welcome to our website!111111111111111111',
+  //     task: 'Task1'
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'About',
+  //     parent_id: null,
+  //     title: 'Learn more about us',
+  //     task: 'Task2'
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'Team',
+  //     parent_id: 2,
+  //     title: 'Meet our talented team',
+  //     task: 'Task3'
+  //   },
+  //   {
+  //     id: 4,
+  //     name: 'Contact',
+  //     parent_id: 2,
+  //     title: 'Get in touch with us',
+  //     task: 'Task4'
+  //   },
+  //   {
+  //     id: 5,
+  //     name: 'Services',
+  //     parent_id: null,
+  //     title: 'Explore our services',
+  //     task: 'Task5'
+  //   },
+  //   {
+  //     id: 6,
+  //     name: 'Development',
+  //     parent_id: 5,
+  //     title: 'Expert web development services',
+  //     task: 'Task6'
+  //   },
+  //   {
+  //     id: 7,
+  //     name: 'Design',
+  //     parent_id: 5,
+  //     title: 'Professional web design services',
+  //     task: 'Task7'
+  //   },
+  //   {
+  //     id: 8,
+  //     name: 'Consulting',
+  //     parent_id: 5,
+  //     title: 'Comprehensive digital marketing consulting',
+  //     task: 'Task8'
+  //   },
+  //   {
+  //     id: 9,
+  //     name: 'Web Development',
+  //     parent_id: 6,
+  //     title: 'Custom web development solutions',
+  //     task: 'Task9'
+  //   },
+  //   {
+  //     id: 10,
+  //     name: 'Mobile App Development',
+  //     parent_id: 9,
+  //     title: 'Expert mobile app development services',
+  //     task: 'Task10'
+  //   },
+  //   {
+  //     id: 11,
+  //     name: 'E-commerce Development',
+  //     parent_id: 6,
+  //     title: 'Custom e-commerce development solutions',
+  //     task: 'Task11'
+  //   },
+  //   {
+  //     id: 12,
+  //     name: 'UI/UX Design',
+  //     parent_id: 7,
+  //     title: 'User-centered UI/UX design services',
+  //     task: 'Task12'
+  //   },
+  //   {
+  //     id: 13,
+  //     name: 'Branding',
+  //     parent_id: 7,
+  //     title: 'Comprehensive branding services',
+  //     task: 'Task13'
+  //   },
+  //   {
+  //     id: 14,
+  //     name: 'Digital Marketing',
+  //     parent_id: 8,
+  //     title: 'Expert digital marketing services',
+  //     task: 'Task14'
+  //   },
+  //   {
+  //     id: 15,
+  //     name: 'SEO',
+  //     parent_id: 8,
+  //     title: 'Custom SEO solutions',
+  //     task: 'Task15'
+  //   },
+  //   {
+  //     id: 16,
+  //     name: 'Social Media Marketing',
+  //     parent_id: 8,
+  //     title: 'Expert social media marketing services',
+  //     task: 'Task16'
+  //   }
+  // ];
+  
+  const navigate = useNavigate();
+  const handleFileClick = (id) => {
+    navigate(`/newtask/${id}`);
+    console.log('This will add new file to', id);
+  };
+
+  const handleNewTaskClick = (id) => {
+    navigate(`/task/newtask/${id}`);
+    console.log('This will add new file to', id);
+  };
+
+  const handleTasksClick = (id) => {
+    navigate(`/task/${id}`);
     console.log('This will add new file to', id);
   };
   const createTreeData = (
@@ -200,8 +228,8 @@ function TaskTree() {
       const dataKey = `${key}-${i}`;
       let menu = (
         <Menu>
-          <Menu.Item key={`newfile${prcessData[i].id}`} onClick={handleNewFileClick(prcessData[i].id)}>New File</Menu.Item>
-          <Menu.Item key={`newtask${prcessData[i].id}`}>New Task</Menu.Item>
+          <Menu.Item key={`newfile${prcessData[i].id}`} >New Task Group</Menu.Item>
+          <Menu.Item key={`newtask${prcessData[i].id}`} onClick={() => handleNewTaskClick(prcessData[i].id)}>New Task</Menu.Item>
           <Menu.Item key={`deletecategory${prcessData[i].id}`}>Delete Category</Menu.Item>
         </Menu>
       );
@@ -215,11 +243,10 @@ function TaskTree() {
       };
       
       treeData.push({
-        // title: prcessData[i].title,
         title: (
           <div className='category-item'>
             <div className="title">
-              <span>
+              <span onClick={() => handleTasksClick(prcessData[i].id)}>
               {prcessData[i].title}
               </span>
             </div>
@@ -263,17 +290,6 @@ function TaskTree() {
       <div>
         <Outlet />
       </div>
-      {/* <div className="task-list">
-        {tasks.map((task) => (
-          <div className="task-item" key={task.id} onClick={() => handleOnTask('eTask')}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <SnippetsOutlined />
-              <div className="task-title">{task.title}</div>
-            </div>
-            <MoreOutlined />
-          </div>
-        ))}
-      </div> */}
     </div>
   );
 }
